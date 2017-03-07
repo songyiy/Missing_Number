@@ -444,7 +444,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-aR-fCw">
                                 <rect key="frame" x="214" y="406" width="145" height="161"/>
-                                <state key="normal" image="end-begin"/>
+                                <state key="normal" image="bg"/>
                                 <connections>
                                     <action selector="tapBtWithSender:" destination="ogt-rM-mz3" eventType="touchUpInside" id="Nf3-AG-sJ9"/>
                                     <segue destination="691-T7-tEo" kind="show" id="hTr-Xw-cRX"/>
@@ -498,7 +498,7 @@
         <image name="I1" width="84" height="84"/>
         <image name="begain button" width="145" height="42"/>
         <image name="begain-img" width="375" height="667"/>
-        <image name="end-begin" width="145" height="42"/>
+        <image name="bg" width="145" height="42"/>
         <image name="gameover" width="375" height="667"/>
         <image name="home" width="145" height="42"/>
         <image name="how1" width="375" height="667"/>
@@ -506,6 +506,6 @@
         <image name="setting button" width="145" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IlX-pp-BEw"/>
+        <segue reference="hTr-Xw-cRX"/>
     </inferredMetricsTieBreakers>
 </document>
