@@ -82,6 +82,16 @@ class gameViewController: UIViewController {
             
             gameBegin(levelTime: levelTime, gameLabel: gameNumberl)
             
+        }else if level > 40{
+            
+            gameNumber.text = "\(numList![0])\(numList![1])\(numList![2])"+"\(numList![3])\(numList![4])\(numList![5])"+"\(numList![6])\(numList![7])\(numList![8])"
+            levelTime = 0
+            gameBegin(levelTime: levelTime, gameLabel: gameNumber)
+            
+        }else if level > 60{
+            gameNumberl.text = "\(numList![0])\(numList![1])\(numList![2])"+"\(numList![3])\(numList![4])\(numList![5])"+"\(numList![6])\(numList![7])\(numList![8])"
+            levelTime = 0
+            gameBegin(levelTime: levelTime, gameLabel: gameNumberl)
         }
         
     }

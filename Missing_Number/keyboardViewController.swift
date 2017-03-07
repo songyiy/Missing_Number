@@ -16,12 +16,23 @@ class keyboardViewController: UIViewController, UIViewControllerTransitioningDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let notiName = Notification.Name(rawValue: "UIApplicationDidEnterBackgroundNotification")
+        NotificationCenter.default.addObserver(forName: notiName, object: nil, queue: nil) { (_) in
+            self.performSegue(withIdentifier: "gameOver", sender: self)
+        }
+        
+        
+        
         //print(missing)
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
 
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +72,8 @@ class keyboardViewController: UIViewController, UIViewControllerTransitioningDel
             endViewCon.score = score
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -23,6 +23,12 @@ class ViewController: UIViewController {
     
     @IBAction func tapBt(sender: UIButton){
         PlayMusic.playEffec()
+        
+        if sender.tag == 3{
+            let urlString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1211763429&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+            let url = URL(string: urlString)
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
     }
 
     @IBAction func returnFromSegue(sender: UIStoryboardSegue){
