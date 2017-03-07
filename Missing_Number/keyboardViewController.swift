@@ -12,14 +12,16 @@ class keyboardViewController: UIViewController, UIViewControllerTransitioningDel
     
     var missing: Int! = nil
     var score: Int!
+    let notiName = Notification.Name(rawValue: "UIApplicationDidEnterBackgroundNotification")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let notiName = Notification.Name(rawValue: "UIApplicationDidEnterBackgroundNotification")
-        NotificationCenter.default.addObserver(forName: notiName, object: nil, queue: nil) { (_) in
-            self.performSegue(withIdentifier: "gameOver", sender: self)
-        }
+        NotificationCenter.default.post(name: notiName, object: nil)
+//        NotificationCenter.default.addObserver(forName: notiName, object: nil, queue: nil) { (_) in
+//            print("noti")
+//            self.performSegue(withIdentifier: "gameOver", sender: self)
+//        }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardViewController.enterBack), name: notiName, object: nil)
         
         
         
@@ -27,12 +29,18 @@ class keyboardViewController: UIViewController, UIViewControllerTransitioningDel
         // Do any additional setup after loading the view.
     }
     
+    func enterBack(){
+        self.performSegue(withIdentifier: "gameOver", sender: self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
 
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
+        print("disappear")
         NotificationCenter.default.removeObserver(self)
+        
     }
 
     override func didReceiveMemoryWarning() {
